@@ -1,0 +1,30 @@
+#:import StepWidget ui.screen.step
+
+<StepWidget>:
+    adaptive_height: True
+
+    MDBoxLayout:
+        padding: (20, 0)
+        spacing: 20
+
+        canvas:
+            Color:
+                rgba: 0, .588, .533, 1
+            Line:
+                width: 1
+                rectangle: (self.x, self.y, self.width, self.height)
+
+        MDBoxLayout:
+            orientation: "vertical"
+            adaptive_height: True
+
+            MDLabel:
+                text: root.name
+
+            MDLabel:
+                text: root.distance
+
+        Image:
+            size_hint_x: None
+            width: 80
+            source: root.image_source

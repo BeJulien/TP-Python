@@ -1,0 +1,15 @@
+#:import MenuWidget ui.screen.menu
+
+<MenuWidget>:
+    adaptive_height: True
+
+    MDLabel:
+        text: "Distance totale : " + root.total_distance
+
+    MDRaisedButton:
+        text: "Retour (efface l'itinéraire)"
+        on_release:
+            app.root.get_screen("route_screen").delete_scroll()
+
+            app.root.transition.direction = "right"
+            app.root.current = "search_screen"

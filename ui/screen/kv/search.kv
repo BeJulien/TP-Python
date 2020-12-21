@@ -1,0 +1,22 @@
+#:import SearchScreen ui.screen.search
+
+<SearchScreen>:
+    name: "search_screen"
+
+    MDLabel:
+        id: current_location
+        halign: "center"
+        pos_hint: {"center_y": .7}
+
+    MDTextField:
+        id: location_input
+        hint_text: "Adresse de destination"
+        helper_text: "La précision est importante"
+        helper_text_mode: "persistent"
+        size_hint: (.8, None)
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+    MDRaisedButton:
+        text: "Calculer un itinéraire"
+        pos_hint: {"center_x": .5, "center_y": .35}
+        on_release: root.verify_town()
