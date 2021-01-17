@@ -1,0 +1,34 @@
+#:import StepWidget gui.screen.step
+
+<StepWidget>:
+    adaptive_height: True
+
+    MDBoxLayout:
+        padding: (20, 10)
+        spacing: 10
+
+        canvas:
+            Color:
+                rgba: 0, .588, .533, .1
+
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: 10, 10, 10, 10
+
+        MDBoxLayout:
+            orientation: "vertical"
+
+            MDLabel:
+                text: root.name
+                theme_text_color: "Hint"
+                bold: True
+
+            MDLabel:
+                text: root.distance
+                theme_text_color: "Hint"
+
+        Image:
+            size_hint_x: None
+            width: 80
+            source: root.image_source
